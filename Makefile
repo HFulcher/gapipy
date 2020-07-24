@@ -8,7 +8,7 @@ clean:
 	rm -rf build
 	rm -rf dist
 
-package: readme
+package:
 	python3 setup.py sdist upload
 
 docs:
