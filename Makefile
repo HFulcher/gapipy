@@ -1,5 +1,3 @@
-.ONESHELL:
-
 .PHONY: test clean package docs
 
 test:
@@ -14,4 +12,5 @@ package: readme
 	python3 setup.py sdist upload
 
 docs:
-	cd docs && make html
+	sphinx-apidoc -o docs/ gapipy
+	make -C docs html

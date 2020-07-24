@@ -85,6 +85,7 @@ target/
 sandbox
 
 # Additional
-ga-key.json
-client_secret.json
+*.json
 .vscode
+.nox
+.pytest_cache

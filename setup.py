@@ -3,13 +3,13 @@ import codecs
 from setuptools import find_packages, setup
 
 setup(name='gapipy',
-    description='A wrapper for the Google Analytics API. Originally maintained by Stijn Debrouwere. Now maintained by Huw Fulcher.',
+    description='A wrapper for the Google Analytics API.',
     long_description=codecs.open('README.md', 'r', 'utf-8').read(),
     author='Huw Fulcher',
     author_email='fulcherhuw@gmail.com',
     url='https://github.com/huwfulcher/gapipy/',
     download_url='http://www.github.com/huwfulcher/gapipy/tarball/master',
-    version='0.26.0',
+    version='0.0.1',
     license='ISC',
     packages=find_packages(),
     keywords='data analytics api wrapper google',
@@ -17,7 +17,7 @@ setup(name='gapipy',
     install_requires=[
         'google-auth>=1.19.2',
         'google-api-python-client>=1.10.0',
-        'google-auth-oauthlib>=0.4.1'
+        'google-auth-oauthlib>=0.4.1',
         'python-dateutil',
         'addressable>=1.4.2',
         'inspect-it>=0.3.2',
