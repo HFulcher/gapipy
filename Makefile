@@ -1,5 +1,3 @@
-.ONESHELL:
-
 .PHONY: test clean package docs
 
 test:
@@ -10,8 +8,9 @@ clean:
 	rm -rf build
 	rm -rf dist
 
-package: readme
+package:
 	python3 setup.py sdist upload
 
 docs:
-	cd docs && make html
+	sphinx-apidoc -o docs/ gapipy
+	make -C docs html

@@ -1,4 +1,7 @@
-# Google Analytics for Python and the command-line (soon)
+# Google Analytics for Python
+
+[![Documentation Status](https://readthedocs.org/projects/google-analytics-python/badge/?version=latest)](https://google-analytics-python.readthedocs.io/en/latest/?badge=latest)
+![gapipy](https://github.com/HFulcher/gapipy/workflows/gapipy/badge.svg)
 
 `gapipy` provides a clean and simple wrapper around the Google Analytics Reporting API to allow for custom queries and report generation.
 
