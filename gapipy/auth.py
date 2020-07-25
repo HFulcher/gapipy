@@ -3,12 +3,12 @@
 Allows users to authenticate a service account or installed application using
 either:
     * A .json key file for service accounts (must be in root directory of
-    where your script is run)
+      where your script is run)
     * A .env file with a path to the .json key for service accounts
     * If no .env file is provided the environment variables will be checked
-    for GOOGLE_APPLICATION_CREDENTIALS
+      for `GOOGLE_APPLICATION_CREDENTIALS`
     * A .json oauth2 credentials file for installed applications (must be in
-    root directory of where your script is run)
+      root directory of where your script is run)
 
 Examples:
     To authenticate and retrieve a Google API service with a service account::
@@ -31,21 +31,24 @@ Examples:
 
 Attributes:
     BASEDIR (os.path): Gets the working directory of where the module is
-    imported to. This allows the authentication process to find a specified
-    .json or .env file.
+                       imported to. This allows the authentication process
+                       to find a specified .json or .env file.
 
     DEFAULT_SCOPE (list): List of scopes that will define what the
-    authenticated service can access. Access to profile, email and openid is
-    needed with oauth2 verification.
+                          authenticated service can access. Access to profile,
+                          email and openid is
+                          needed with oauth2 verification.
 
-    REQUIRED_ENV_VAR (string): Name of required environment variable for
-    service account authentication from environment. Variable should point to
-    the absolute path of the .json file.
+    REQUIRED_ENV_VAR (string): Name of required environment variable for service
+                               account authentication from environment. Variable
+                               should point to the absolute path of the .json
+                               file.
 
     API_NAME (string): Specifies the [Google Analytics Reporting API]
-    (https://developers.google.com/analytics/devguides/reporting/core/v4/).
-    The Google Analytics API v3 is still available but it is recommended to
-    use the Reporting API to get full access to features.
+                       (https://developers.google.com/analytics/devguides/reporting/core/v4/).
+                       The Google Analytics API v3 is still available but it is
+                       recommended to use the Reporting API to get full access
+                       to features.
 
     API_VERSION (string): Specifies the latest version of the Reporting API.
 """
@@ -70,20 +73,19 @@ API_VERSION = "v4"
 
 
 def authenticate(from_service=True, fileName=None):
-    """The primary function to authenticate a Google Analytics Reporting API
-    service.
-
+    """
     The primary function to authenticate a Google Analytics Reporting API
     service. Provides a way to authenticate service accounts
     (.json/.env/environment variables) and installed applications (.json).
 
     Args:
         from_service (bool, optional): Flag to specify whether authentication
-        is from a service account or from an installed application. Defaults
-        to True.
+                                       is from a service account or from an
+                                       installed application. Defaults to True.
         fileName (string, optional): Name of the .json file that has either
-        the service account key or the client secret for installed
-        applications. Defaults to None.
+                                     the service account key or the client
+                                     secret for installed applications. Defaults
+                                     to None.
 
     Raises:
         FileNotFoundError: Raised when a user tries to use oauth
@@ -108,26 +110,24 @@ def authenticate(from_service=True, fileName=None):
 
 # TODO: Unit tests
 def _authenticate_service(fileName=None):
-    """Function to authenticate and create Resource to the API for a service
-    account.
-
+    """
     Function will try to authenticate using either the file name provided or
     by accessing environment variable (GOOGLE_APPLICATION_CREDENTIALS) that
     provides a path to the client key .json file.
 
     Args:
         fileName (string, optional): File name passed through from
-        authenticate(). Defaults to None.
+                                     authenticate(). Defaults to None.
 
     Raises:
         FileNotFoundError: Raised when provided file name cannot be found.
         RuntimeWarning: Warns user that a .env file cannot be found.
         ValueError: Raised when GOOGLE_APPLICATION_CREDENTIALS cannot be found
-        in the environment variables.
+                    in the environment variables.
 
     Returns:
-        Resource: Returns a Google API Resource object that allows users to
-        query and receive data from the API.
+        Returns a Google API Resource object that allows users to query and
+        receive data from the API.
     """
 
     if fileName:
@@ -169,9 +169,7 @@ def _authenticate_service(fileName=None):
 # TODO: Add option to store and load credentials.
 # TODO: Unit tests
 def _authenticate_install(fileName):
-    """Function to authenticate and create Resource to the API for an installed
-    application.
-
+    """
     Function will try to authenticate using a client secrets .json file provided
     via fileName.
 
@@ -182,8 +180,8 @@ def _authenticate_install(fileName):
         FileNotFoundError: Raised when provided file name cannot be found.
 
     Returns:
-        Resource: Returns a Google API Resource object that allows users to
-        query and receive data from the API.
+        Returns a Google API Resource object that allows users to query and
+        receive data from the API.
     """
 
     filePath = os.path.join(BASEDIR, fileName)
