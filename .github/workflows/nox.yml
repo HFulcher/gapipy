@@ -25,4 +25,6 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - run: pip install nox
     - run: nox
+      env:
+        CODECOV_TOKEN: ${{secrets.CODECOV_TOKEN}}
 
