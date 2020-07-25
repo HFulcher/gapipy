@@ -2,6 +2,7 @@
 
 [![Documentation Status](https://readthedocs.org/projects/google-analytics-python/badge/?version=latest)](https://google-analytics-python.readthedocs.io/en/latest/?badge=latest)
 ![gapipy](https://github.com/HFulcher/gapipy/workflows/gapipy/badge.svg)
+[![codecov](https://codecov.io/gh/HFulcher/gapipy/branch/master/graph/badge.svg)](https://codecov.io/gh/HFulcher/gapipy)
 
 `gapipy` provides a clean and simple wrapper around the Google Analytics Reporting API to allow for custom queries and report generation.
 
