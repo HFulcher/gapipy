@@ -28,6 +28,7 @@ def docs(session):
 
 @nox.session
 def coverage(session):
-    session.install("coverage[toml]", "codecov")
+    session.install("coverage", "codecov", "pytest")
+    session.run("coverage", "run", "-m", "pytest")
     session.run("coverage", "xml", "--fail-under=0")
     session.run("codecov", *session.posargs)
