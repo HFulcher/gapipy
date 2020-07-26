@@ -63,4 +63,4 @@ If you would like to help out please take a look at the [contributing document.]
 
 
 ## Need a hand?
-[Get in touch]("mailto:fulcherhuw@gmail.com?subject=RE: gapipy") or [raise an issue.](https://github.com/HFulcher/gapipy/issues)
+[Get in touch](mailto:fulcherhuw@gmail.com?subject=RE: gapipy) or [raise an issue.](https://github.com/HFulcher/gapipy/issues)
