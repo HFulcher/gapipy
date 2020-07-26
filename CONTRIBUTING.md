@@ -7,12 +7,10 @@ what help is needed and how you can provide it. I look forward to hopefully work
 
 ## Important Resources
 ### Docs
-Docs are produced using [sphinx]() and are hosted on [readthedocs](). You can build documentation on your local machine
-by using [nox]() (you'll need to install it using the `requirements.txt`). To build the docs run `nox --sessions docs` from
-the command line.
+Docs are produced using [sphinx](https://www.sphinx-doc.org/en/master/) and are hosted on [readthedocs](https://google-analytics-python.readthedocs.io/en/latest/). You can build documentation on your local machine by using [nox](https://nox.thea.codes/en/stable/) (you'll need to install it using the `requirements.txt`). To build the docs run `nox --sessions docs` from the command line.
 
 ### Bug reporting/tracking
-Bug tracking is handled through [Github Issues](). When creating an issue you can choose an appropriate template that will
+Bug tracking is handled through [Github Issues](https://github.com/HFulcher/gapipy/issues). When creating an issue you can choose an appropriate template that will
 help guide you in how to structure the report. This is useful for us to be able to diagnose and solve bugs quicker.
 
 ### Communication
@@ -42,12 +40,12 @@ If you find an issue that you want to work on, first of all, thanks! To get star
 ### Setting up the environment
 It is strongly recommended that you have a dedicated virtual environment for working on gapipy. A strict method of creating
 and maintaining virtual environments is not enforced for this project but the requirement of having a environment manager that can
-produce and read `requirements.txt` files is required. A good option is to use [pip]() and [pipenv]().
+produce and read `requirements.txt` files is required. A good option is to use [pip](https://pip.pypa.io/en/stable/) and [pipenv](https://pypi.org/project/pipenv/).
 
 ### Testing the package
-Tests are written using [pytest]() and are located in the `tests` folder. To run the tests you will need to install
+Tests are written using [pytest](https://docs.pytest.org/en/latest/) and are located in the `tests` folder. To run the tests you will need to install
 pytest and/or nox. To run the tests either use `pytest` in the root of the project or run `nox --sessions tests`.
 
 ### Style guide
-[flake8]() is used to lint the project with some custom parameters found in `tox.ini`. To use the linter on the project install nox and
+[flake8](https://flake8.pycqa.org/en/latest/) is used to lint the project with some custom parameters found in `tox.ini`. To use the linter on the project install nox and
 run `nox --sessions lint`.
