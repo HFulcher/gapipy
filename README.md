@@ -4,7 +4,7 @@
 ![gapipy](https://github.com/HFulcher/gapipy/workflows/gapipy/badge.svg)
 [![codecov](https://codecov.io/gh/HFulcher/gapipy/branch/master/graph/badge.svg)](https://codecov.io/gh/HFulcher/gapipy)
 
-**WARNING: This package is not ready for production yet. If you would like to help make that happen quicker please consider [contributing](https://github.com/HFulcher/gapipy/CONTRIBUTING)**
+**WARNING: This package is not ready for production yet. If you would like to help make that happen quicker please consider [contributing](https://github.com/HFulcher/gapipy/blob/master/CONTRIBUTING.md)**
 
 `gapipy` provides a clean and simple wrapper around the Google Analytics Reporting API (v4) to allow for custom queries and report generation.
 
@@ -59,7 +59,7 @@ service = ga.authenticate(from_service=True)
 
 ## Contributing
 At the moment this project is being developed and maintained by just me but I am looking for more people to help in the effort.
-If you would like to help out please take a look at the [contributing document.](https://github.com/HFulcher/gapipy/CONTRIBUTING)
+If you would like to help out please take a look at the [contributing document.](https://github.com/HFulcher/gapipy/blob/master/CONTRIBUTING.md)
 
 
 ## Need a hand?
