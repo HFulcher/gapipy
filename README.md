@@ -4,14 +4,22 @@
 ![gapipy](https://github.com/HFulcher/gapipy/workflows/gapipy/badge.svg)
 [![codecov](https://codecov.io/gh/HFulcher/gapipy/branch/master/graph/badge.svg)](https://codecov.io/gh/HFulcher/gapipy)
 
-`gapipy` provides a clean and simple wrapper around the Google Analytics Reporting API to allow for custom queries and report generation.
+**WARNING: This package is not ready for production yet. If you would like to help make that happen quicker please consider [contributing](https://github.com/HFulcher/gapipy/CONTRIBUTING)**
 
-* **Authentication.** Authenticating service accounts or installed applications is now even easier only requiring one function call.
+`gapipy` provides a clean and simple wrapper around the Google Analytics Reporting API (v4) to allow for custom queries and report generation.
+
+* **Authentication.** Authenticating service accounts or installed applications only requires one function call.
 * **Querying.** *Coming soon*
-* **Reporting.** *Coming soon*
-* **Exports.** *Coming soon*
+* **Exporting Reports.** *Coming soon*
+* **Realtime API.** *Coming soon*
+* **Command Line execution.** *Coming soon*
+* **Account Configuration & Management.** *Coming soon*
 
-This package is built on top of [Google's own API client for Python][apiclient].
+This package is built on top of [Google's own API client for Python][apiclient]. This package also stands on the shoulders of previous Google API packages. Notably:
+
+* [debrouwere/google-analytics](https://github.com/debrouwere/google-analytics)
+* [alphagov/gapy](https://github.com/alphagov/gapy)
+
 
 ## Quickstart
 
@@ -47,3 +55,12 @@ import gapipy as ga
 
 service = ga.authenticate(from_service=True)
 ```
+
+
+## Contributing
+At the moment this project is being developed and maintained by just me but I am looking for more people to help in the effort.
+If you would like to help out please take a look at the [contributing document.](https://github.com/HFulcher/gapipy/CONTRIBUTING)
+
+
+## Need a hand?
+[Get in touch]("mailto:fulcherhuw@gmail.com?subject=RE: gapipy") or [raise an issue.](https://github.com/HFulcher/gapipy/issues)
