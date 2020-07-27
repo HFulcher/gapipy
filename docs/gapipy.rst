@@ -7,7 +7,6 @@ Subpackages
 .. toctree::
    :maxdepth: 4
 
-   gapipy.commands
    gapipy.tests
    gapipy.utils
 
