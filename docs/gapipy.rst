@@ -1,38 +1,13 @@
 gapipy package
 ==============
 
-Subpackages
------------
-
-.. toctree::
-   :maxdepth: 4
-
-   gapipy.tests
-   gapipy.utils
-
 Submodules
 ----------
 
-gapipy.account module
----------------------
+gapipy.client module
+--------------------
 
-.. automodule:: gapipy.account
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-gapipy.blueprint module
------------------------
-
-.. automodule:: gapipy.blueprint
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-gapipy.columns module
----------------------
-
-.. automodule:: gapipy.columns
+.. automodule:: gapipy.client
    :members:
    :undoc-members:
    :show-inheritance:
