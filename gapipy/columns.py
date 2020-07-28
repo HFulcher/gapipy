@@ -8,7 +8,7 @@ from addressable import filter, map
 
 from snakify import snakify
 
-from . import utils
+import utils
 
 TYPES = {
     'STRING': utils.unicode,

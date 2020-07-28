@@ -18,8 +18,8 @@ import yaml
 from dateutil.relativedelta import relativedelta
 import prettytable
 
-from . import errors, utils
-from .columns import Column, ColumnList, Segment
+import errors, utils
+from columns import Column, ColumnList, Segment
 
 
 INTERVAL_TIMEDELTAS = {
@@ -1133,3 +1133,26 @@ def refine(query, description):
             setattr(attribute, arguments)
 
     return query
+
+
+def parse_ga_url(url):
+    escape_semicolons = url.replace(";", "%3B")
+    query = urlparse.parse_qsl(
+        urlparse.urlparse(escape_semicolons).query)
+    return dict(
+        (key.replace("-", "_"), values) for key, values in query)
+
+
+class Response(object):
+    def __init__(self, response, service, metrics, dimensions, max_results):
+        self.response = response
+        self.service = service
+        self.metrics = metrics
+        self.dimensions = dimensions
+        self.max_results = max_results
+
+    def data(self):
+        return self.response
+
+    def __getattr__(self, key):
+        return self.response[key]
