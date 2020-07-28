@@ -21,14 +21,6 @@ gapipy.account module
    :undoc-members:
    :show-inheritance:
 
-gapipy.auth module
-------------------
-
-.. automodule:: gapipy.auth
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 gapipy.blueprint module
 -----------------------
 
