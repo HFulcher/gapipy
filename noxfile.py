@@ -7,7 +7,7 @@ locations = "gapipy", "noxfile.py"
 def tests(session):
     session.install("-r", "requirements.txt")
     session.install(".")
-    session.install('pytest')
+    session.install('pytest', 'pytest_mock')
     session.run('pytest')
 
 
