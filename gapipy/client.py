@@ -113,7 +113,6 @@ def authenticate(from_service=True, fileName=None):
     return service
 
 
-# TODO: Unit tests
 def _authenticate_service(fileName=None):
     """
     Function will try to authenticate using either the file name provided or
@@ -170,7 +169,6 @@ def _authenticate_service(fileName=None):
 
 
 # TODO: Add option to store and load credentials.
-# TODO: Unit tests
 def _authenticate_install(fileName):
     """
     Function will try to authenticate using a client secrets .json file provided

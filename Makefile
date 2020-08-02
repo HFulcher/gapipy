@@ -6,6 +6,7 @@ test:
 clean:
 	rm -rf gapipy.egg-info
 	rm -rf build
+	rm -rf docs/_build
 	rm -rf dist
 	rm -rf coverage.xml
 	rm -rf .coverage
