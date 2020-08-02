@@ -1,6 +1,7 @@
 """
 Allows users to authenticate a service account or installed application using
 either:
+
     * A .json key file for service accounts (must be in root directory of
       where your script is run)
     * A .env file with a path to the .json key for service accounts
@@ -9,16 +10,19 @@ either:
     * A .json oauth2 credentials file for installed applications (must be in
       root directory of where your script is run)
 
+Using `authenticate()` provides the user with a Client class which acts as an
+interface to execute and receive queries through using `.get()`.
+
 Examples:
     To authenticate and retrieve a Google API service with a service account::
 
         import gapipy as ga
 
         # For .json files, from_service=True is on by default
-        service = ga.authenticate(fileName="example.json")
+        service = ga.client.authenticate(fileName="example.json")
 
         # For .env files
-        service = ga.authenticate()
+        service = ga.client.authenticate()
 
     To authenticate and retrieve a Google API service with a installed
     application::
@@ -26,7 +30,7 @@ Examples:
         import gapipy as ga
 
         # Must always provide from_service=False and a file name
-        service = ga.authenticate(fileName="example.json")
+        service = ga.client.authenticate(fileName="example.json")
 
 Attributes:
     BASEDIR (os.path): Gets the working directory of where the module is
@@ -93,8 +97,8 @@ def authenticate(from_service=True, fileName=None):
         authentication without specifying a client secrets file.
 
     Returns:
-        Resource: Returns a Google API Resource object that allows users to
-        query and receive data from the API.
+        Returns a Client class that holds the authenticated service and allows
+        for execution of queries.
     """
 
     if not from_service and fileName:
@@ -127,8 +131,8 @@ def _authenticate_service(fileName=None):
                     in the environment variables.
 
     Returns:
-        Returns a Google API Resource object that allows users to query and
-        receive data from the API.
+        Returns a Client class that holds the authenticated service and allows
+        for execution of queries.
     """
 
     if fileName:
@@ -179,8 +183,8 @@ def _authenticate_install(fileName):
         FileNotFoundError: Raised when provided file name cannot be found.
 
     Returns:
-        Returns a Google API Resource object that allows users to query and
-        receive data from the API.
+        Returns a Client class that holds the authenticated service and allows
+        for execution of queries.
     """
 
     filePath = os.path.join(BASEDIR, fileName)
@@ -204,11 +208,46 @@ def _build(credentials):
 
 
 class Client(object):
+    """
+    Client class that handles storing the authenticated service and sending/
+    receiving queries. Will likely be expanded in future as Management and
+    Real Time API support is added.
+    """
+
     def __init__(self, service):
         self.service = service
 
     def get(self, view_id, start_date, end_date, metrics,
             dimensions=None):
+        """
+        Function to define a query to send to the API. As a minimum the user
+        must provide a view id, start & end date and at least one metric to
+        collect.
+
+        A full list of dimensions and metrics can be found
+        [here.](https://ga-dev-tools.appspot.com/dimensions-metrics-explorer/)
+
+        *In future a default start/end date may be introduced.*
+
+        Args:
+            view_id (string/integer): The view id of the view to query. This can
+                                      be passed as a String or an Integer.
+            start_date (string): The start date in the format `YYYY-MM-DD`.
+            end_date (string): The end date in the format `YYYY-MM-DD`.
+            metrics (string/list): One or many metrics.
+                                   The "ga:" prefix can be added if preferred
+                                   but the query handler will check and add if
+                                   not present.
+            dimensions (string/list, optional): One or many dimensions. The
+                                                "ga:" prefix can be added if
+                                                preferred but the query handler
+                                                will check and add if not
+                                                present. Defaults to None.
+
+        Returns:
+            dict: The result of the query in a JSON format. *In future this*
+            *will be processed into a more manageable format if the user needs.*
+        """
 
         ga_query = build_query(
             view_id=view_id,
