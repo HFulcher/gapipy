@@ -19,28 +19,3 @@ gapipy.errors module
    :members:
    :undoc-members:
    :show-inheritance:
-
-gapipy.query module
--------------------
-
-.. automodule:: gapipy.query
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-gapipy.segments module
-----------------------
-
-.. automodule:: gapipy.segments
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-
-Module contents
----------------
-
-.. automodule:: gapipy
-   :members:
-   :undoc-members:
-   :show-inheritance:

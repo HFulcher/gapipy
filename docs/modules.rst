@@ -1,7 +1,4 @@
-gapipy
-======
-
 .. toctree::
-   :maxdepth: 4
+    :maxdepth: 4
 
-   gapipy
+    gapipy

@@ -4,4 +4,4 @@ __author__ = "Huw Fulcher"
 
 import pkg_resources
 
-from . import client, query
+# from . import client, errors

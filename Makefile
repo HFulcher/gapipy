@@ -1,7 +1,4 @@
-.PHONY: test clean package docs
-
-test:
-	python3 setup.py test
+.PHONY: clean package
 
 clean:
 	rm -rf gapipy.egg-info
@@ -13,6 +10,5 @@ clean:
 package:
 	python3 setup.py sdist upload
 
-docs:
-	sphinx-apidoc -o docs/ gapipy
-	make -C docs html
+requirements:
+	pip freeze > requirements.txt

@@ -60,7 +60,6 @@ from googleapiclient import discovery
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google import auth
 from dotenv import load_dotenv
-from query import Response
 
 BASEDIR = os.getcwd()
 DEFAULT_SCOPE = ['https://www.googleapis.com/auth/analytics.readonly',
@@ -276,11 +275,3 @@ class QueryClient(object):
         for arg in "dimensions filters sort max_results segment".split():
             kwargs = self._filter_empty(kwargs, arg)
         return self.service.report().batchGet(**kwargs).execute()
-
-    def _get_response(self, m, d, **kwargs):
-        return Response(
-            self,
-            self.get_raw_response(**kwargs),
-            m, d,
-            max_results=kwargs.get("max_results", None),
-        )
