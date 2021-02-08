@@ -12,13 +12,14 @@
 #
 import os
 import sys
+from datetime import date
 sys.path.insert(0, os.path.abspath('..'))
 
 
 # -- Project information -----------------------------------------------------
 
 project = 'gapipy'
-copyright = '2020, Huw Fulcher'
+copyright = '{}, Huw Fulcher'.format(date.year)
 author = 'Huw Fulcher'
 
 # The full version, including alpha/beta/rc tags
